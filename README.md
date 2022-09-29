@@ -1,1 +1,0 @@
-# PINN_Terzaghy-Consolidation
