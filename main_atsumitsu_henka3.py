@@ -112,7 +112,7 @@ class PINN():
             line_search_fn="strong_wolfe"  # can be "strong_wolfe"
         )
 
-        self.optimizer_Adam = torch.optim.Adam(self.dnn.parameters(),lr=0.01)
+        self.optimizer_Adam = torch.optim.Adam(self.dnn.parameters(),lr=0.001)
         self.iter = 0
         summary(self.dnn,input_size=(torch.cat([self.x, self.t], dim=1).shape))
 
@@ -321,7 +321,6 @@ if __name__=="__main__":
     #plt.hist(dataT)
     #plt.show()
     plt.scatter(dataT*SIM,dataX,s=1)      ##コロケーションポイントの分布図
-    plt.scatter(t0,x0,s=1)
     #plt.rcParams["font.family"] = "Times New Roman"
     #font_num = 22
     #parameters = {'axes.labelsize':22 , 'axes.titlesize':22 , 'figure.titlesize':22 , 'xtick.labelsize':22 , 'labelsize':22}
